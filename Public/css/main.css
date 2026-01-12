@@ -1,0 +1,33 @@
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    background-color: #1e293b; /* bleu foncé moderne */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Liens */
+.navbar a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Effet hover */
+.navbar a:hover {
+    background-color: #38bdf8; /* bleu clair */
+    color: #0f172a;
+}
+
+/* Lien actif (optionnel) */
+.navbar a.active {
+    background-color: #0ea5e9;
+    color: white;
+}

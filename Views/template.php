@@ -11,9 +11,14 @@
 <body>
 <header>
     <!-- Menu -->
-    <nav>
+   <nav class="navbar">
+    <a href="index.php">Accueil</a>
+    <a href="index.php?action=add-perso">Ajouter un personnage</a>
+    <a href="index.php?action=add-perso-element">Ajouter par élément</a>
+    <a href="index.php?action=logs">Logs</a>
+    <a href="index.php?action=login">Login</a>
+</nav>
 
-    </nav>
 </header>
 <!-- #contenu -->
 <main id="contenu">
