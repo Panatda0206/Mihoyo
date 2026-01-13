@@ -16,14 +16,13 @@ class RouteEditPerso extends Route
 
     public function get(array $params = [])
     {
-        $id = $params['id'] ?? null;
-
-        if ($id !== null && $id !== '') {
-            header('Location: index.php?action=add-perso&id=' . urlencode((string)$id));
-        } else {
-            header('Location: index.php?action=add-perso');
+        try {
+            $idPerso = $this->getParam($params, 'idPerso', false);
+            $this->controller->displayEditPerso($idPerso);
+        } catch (\Exception $e) {
+            // si il y a pas id, on réaffiche le formulaire avec message
+            $this->controller->displayAddPerso(null, "id not found");
         }
-        exit;
     }
 
     public function post(array $params = [])

@@ -1,7 +1,16 @@
-<?php $this->layout('template', ['title' => 'Ajouter un personnage']) ?>
+<?php
+$isEdit = !empty($perso); // si on a un perso donc on prende mode edit
+$title = $isEdit ? "Modifier un personnage" : "Ajouter un personnage";
+$action = $isEdit ? "edit-perso" : "add-perso";
+$btnText = $isEdit ? "Mettre à jour" : "Ajouter";
+?>
+<?php if (!empty($message)): ?>
+  <div class="error-message"><?= $this->e($message) ?></div>
+<?php endif; ?>
+<?php $this->layout('template', ['title' => $title]) ?>
 <head><link rel="stylesheet" href="public/css/main.css"/></head>
 <link rel="stylesheet" href="public/css/main.css"/>
-<h1>Ajouter un personnage</h1>
+<h1><?= $this->e($title) ?></h1>
 <div class="contrainAddPerso">
   <fieldset class="FielsetAddPerso">
     <form method="post" action="index.php?action=add-perso" class="form-perso">
@@ -47,7 +56,7 @@
       <label>URL image</label>
       <input type="url" name="url_img" placeholder="https://..." required>
       <br>
-      <button type="submit">Ajouter</button>
+      <button type="submit"><?= $this->e($btnText) ?></button>
     </form>
   </fieldset>
 </div>

@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace Controllers\Router\Route;
 use Controllers\Router\Route;
-use Controllers\MainController;
+use Controllers\PersoController;
 
 class RouteDelPerso extends Route
 {
-    private MainController $controller;
-    public function __construct(string $actionName = 'del-perso', MainController $controller)
+    private PersoController $controller;
+    public function __construct(string $actionName = 'del-perso', PersoController $controller)
     {
         parent::__construct($actionName);
         $this->controller = $controller;
@@ -16,11 +16,14 @@ class RouteDelPerso extends Route
 
     public function get(array $params = [])
     {
-        // Plus tard : suppression en base avec $params['id']
-        $message = 'Personnage supprimé avec succès!';
+        try {
+            $idPerso = $this->getParam($params, 'idPerso', false);
 
-        header('Location: index.php?action=index&message=' . urlencode($message));
-        exit;
+            $this->controller->deletePersoAndIndex($idPerso);
+
+        } catch (\Exception $e) {
+            $this->controller->deletePersoAndIndex(null);
+        }
     }
 
     public function post(array $params = [])

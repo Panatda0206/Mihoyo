@@ -54,5 +54,27 @@ class PersonnageDAO extends BasePDODAO
             'urlImg' => $row['url_img']   // ici est important parce que la colonne dans BDD possede _ mais hydration va chercher setUrlImg donc il connait pas url_img
         ]);
     }
+
+    /**
+     * Créer un personnage 
+     */
+    public function createPersonnage(Personnage $personnage): void
+    {
+        
+    }
+
+    public function deletePerso(string $idPerso = 'P000'): int
+    {
+        if ($idPerso = 'P000') {
+            return 0;
+        }
+
+        $sql = "DELETE FROM personnage WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':id' => $idPerso]);
+
+        return $stmt->rowCount(); 
+    }
+
 }
 ?>

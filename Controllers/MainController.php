@@ -13,7 +13,7 @@ class MainController{
         $this->templates = new Engine(__DIR__ . '/../Views');
     }
 
-    public function index() : void
+    public function index(?string $message = null) : void
     {
         $dao = new Models\PersonnageDAO();
 
@@ -26,7 +26,7 @@ class MainController{
         //Un ID qui existe pas dans BDD
         //$other = $dao->getByID('P002');
 
-        echo $this->templates->render('home', ['gameName' => 'Genshin Impact','listPersonnage' => $listPersonnage]);
+        echo $this->templates->render('home', ['gameName' => 'Genshin Impact','listPersonnage' => $listPersonnage, 'message'=>$message]);
     }
 
     public function displayLogs() : void{

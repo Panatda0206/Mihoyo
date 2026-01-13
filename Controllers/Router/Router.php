@@ -35,7 +35,7 @@ class Router
         $this->routeList['add-element'] = new Route\RouteAddElement('add-element', $this->ctrlList['perso']);
         $this->routeList['login'] = new Route\RouteLogin('login', $this->ctrlList['main']);
         $this->routeList['edit-perso'] = new Route\RouteEditPerso('edit-perso',$this->ctrlList['perso']);
-        $this->routeList['del-perso']  = new Route\RouteDelPerso('del-perso',$this->ctrlList['main']);
+        $this->routeList['del-perso']  = new Route\RouteDelPerso('del-perso',$this->ctrlList['perso']);
 
     }
 
