@@ -30,7 +30,7 @@ class MainController{
     }
 
     public function displayLogs() : void{
-        echo $this->engine->render('logs', [
+        echo $this->templates->render('logs', [
         'title' => 'Logs'
     ]);
     }
