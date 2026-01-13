@@ -22,7 +22,7 @@ class RouteAddPerso extends Route
 
     public function post(array $params = []): void
     {
-        // vide pour l’instant (comme dit dans l’énoncé)
+        // vide pour l’instant 
     }
 }
 ?>
