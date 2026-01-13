@@ -24,12 +24,18 @@ class Router
     {
         $this->ctrlList['main'] = new MainController();
         $this->ctrlList['perso'] = new PersoController();
+        
     }
 
     private function createRouteList(): void
     {
         $this->routeList['index'] = new Route\RouteIndex('index', $this->ctrlList['main']);
         $this->routeList['add-perso'] = new Route\RouteAddPerso('add-perso', $this->ctrlList['perso']);
+        $this->routeList['logs'] = new Route\RouteLogs('logs', $this->ctrlList['main']);
+        $this->routeList['add-element'] = new Route\RouteAddElement('add-element', $this->ctrlList['perso']);
+        $this->routeList['login'] = new Route\RouteLogin('login', $this->ctrlList['main']);
+        $this->routeList['edit-perso'] = new Route\RouteEditPerso('edit-perso',$this->ctrlList['perso']);
+        $this->routeList['del-perso']  = new Route\RouteDelPerso('del-perso',$this->ctrlList['main']);
 
     }
 

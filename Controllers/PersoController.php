@@ -20,5 +20,13 @@ class PersoController
             'title' => 'Ajouter un personnage'
         ]);
     }
+
+    public function displayAddElementPerso(): void
+    {
+        echo $this->engine->render('add-element', [
+            'title' => 'Ajouter élément du personnage'
+        ]);
+    }
+
 }
 ?>

@@ -28,6 +28,12 @@ class MainController{
 
         echo $this->templates->render('home', ['gameName' => 'Genshin Impact','listPersonnage' => $listPersonnage]);
     }
+
+    public function displayLogs() : void{
+        echo $this->engine->render('logs', [
+        'title' => 'Logs'
+    ]);
+    }
 }
 
 ?>
