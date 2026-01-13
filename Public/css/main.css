@@ -31,3 +31,39 @@
     background-color: #0ea5e9;
     color: white;
 }
+
+.FielsetAddPerso{
+    width: 50%;
+    height: 400px;
+    justify-items: center;
+     background-color: #cce8f2;
+}
+.contrainAddPerso{
+    display: flex;
+    justify-content: center;
+}
+.fielsetAddEle{
+    width: 50%;
+    height: 200px;
+    justify-items: center;
+    
+}
+.contrain{
+ display: flex;
+    justify-content: center;   
+}
+input, label,button{
+    margin: 20px;
+}
+button{
+    background-color: #0f172a;
+    display: block;
+    margin: 20px auto;
+    color : white;
+    border-radius: 5px;
+    width: 100px;
+    height: auto;
+}
+h1{
+    text-align: center;
+}

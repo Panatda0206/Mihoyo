@@ -34,6 +34,13 @@ class MainController{
         'title' => 'Logs'
     ]);
     }
+
+    public function displayLogInPage()
+    {
+        echo $this->templates->render('login', [
+        'title' => 'Login page'
+    ]);
+    }
 }
 
 ?>
